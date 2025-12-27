@@ -1,101 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ADEDAPTRONICS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adedaptronics | Powering Global Connection</title>
+<meta name="description" content="Adedaptronics - Energy & Electrical Solutions. Solar, Battery, Wiring, Inverters. Reliable, professional, forward-thinking.">
+<link rel="icon" href="Adedaptronics logo.jpeg" type="image/jpeg">
+
+<style>
+/* ===== Reset & Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f5f7fa; color:#333; scroll-behavior:smooth; }
+a { text-decoration:none; color:#007bff; font-weight:bold; }
+a:hover { text-decoration:underline; }
+
+/* ===== Navbar ===== */
+nav { position:sticky; top:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); z-index:1000; }
+nav ul { display:flex; justify-content:center; list-style:none; padding:10px 0; flex-wrap:wrap; }
+nav ul li { margin:0 15px; }
+nav ul li a { padding:8px 12px; border-radius:5px; transition:0.3s; }
+nav ul li a.active, nav ul li a:hover { background:#007bff; color:#fff; }
+
+/* ===== Header ===== */
+header { text-align:center; padding:40px 20px; }
+header img { width:100px; border-radius:10px; margin-bottom:10px; }
+header h2 { font-size:2rem; color:#007bff; margin-bottom:5px; }
+header p { font-style:italic; color:#555; }
+
+/* ===== Headings ===== */
+h1, h2, h3 { margin:20px 0 10px 0; text-align:center; }
+h1 { font-size:2rem; color:#222; }
+h3 { color:#007bff; margin-top:30px; position:relative; }
+h3::after { content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:-5px; width:50px; height:3px; background:linear-gradient(90deg,#007bff,#00bfff); border-radius:2px; }
+
+/* ===== Paragraphs ===== */
+p { margin:10px auto 20px auto; max-width:800px; text-align:center; }
+
+/* ===== Lists ===== */
+ul, ol { margin:15px auto 25px auto; max-width:800px; text-align:left; }
+li { margin-bottom:10px; transition: transform 0.2s, box-shadow 0.2s; }
+li:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+
+/* ===== Table Styling ===== */
+table { border-collapse:collapse; width:90%; margin:20px auto; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+table th, table td { border:1px solid #ddd; padding:12px 15px; text-align:center; }
+table th { background:#007bff; color:#fff; font-weight:bold; }
+table tr:nth-child(even) { background:#f9f9f9; }
+table tr:hover { background:#e6f0ff; }
+table img { border-radius:5px; transition: transform 0.3s, box-shadow 0.3s; }
+table img:hover { transform:scale(1.05); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+
+/* ===== Contact Buttons ===== */
+.contact-links a { display:inline-block; margin:5px; padding:10px 15px; background:#007bff; color:#fff; border-radius:5px; transition:0.3s; }
+.contact-links a:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.15); background:#0056b3; }
+
+/* ===== Sticky Contact ===== */
+.sticky-contact { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:999; }
+.sticky-contact a { padding:10px 15px; border-radius:6px; color:#fff; background:#007bff; box-shadow:0 3px 10px rgba(0,0,0,0.15); transition:0.2s; }
+.sticky-contact a:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+
+/* ===== Scroll-to-Top Button ===== */
+#scrollTopBtn { position:fixed; bottom:80px; right:20px; padding:10px 15px; background:#007bff; color:#fff; border-radius:6px; cursor:pointer; display:none; font-weight:bold; box-shadow:0 3px 10px rgba(0,0,0,0.15); }
+
+/* ===== Scroll Animations ===== */
+.fade-up { opacity:0; transform:translateY(30px); transition:opacity 0.8s ease, transform 0.8s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ===== Section Gradients ===== */
+section:nth-of-type(even) { background:linear-gradient(90deg,#f5f7fa,#e6f0ff); padding:20px; border-radius:10px; margin:20px 0; }
+
+/* ===== Footer ===== */
+footer { margin-top:50px; text-align:center; font-size:0.9rem; color:#555; }
+
+/* ===== Responsive ===== */
+@media (max-width:768px){ table{width:100%;} header img{width:80px;} h1,h2{font-size:1.5rem;} nav ul{flex-direction:column;} nav ul li{margin:10px 0;} }
+</style>
 </head>
+
 <body>
 
-    <center>
-        <img src="Adedaptronics logo.jpeg" width="80" alt="Logo" onerror="this.style.display='none'">
-        <h2>ADEDAPTRONICS</h2>
-        <p>... Powering Global Connection ...</p>
-    </center>
-
-    <h1>ADEDAPTRONICS</h1>
-
-    <p>
-        <u>Adedaptronics</u> is a forward-thinking energy and electrical solutions brand founded in the year <b>2025</b>. 
-        We specialize in clean energy systems, electrical wiring, power maintenance, 
-        and reliable installations designed to keep homes and businesses running 
-        efficiently. <strong>We look forward to serving you.</strong>
-    </p>
-
-    <!-- SERVICES -->
-    <h3>Our Services</h3>
+<nav>
     <ul>
-        <li>Solar Panel Installation</li>
-        <li>Battery Bank Setup</li>
-        <li>Inverter Installation</li>
-        <li>Electrical Wiring (Home, Office & Industrial)</li>
-        <li>System Maintenance & Troubleshooting</li>
-        <li>Load Balancing & Cable Management</li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#whychoose" class="nav-link">Why Choose Us</a></li>
+        <li><a href="#marketing" class="nav-link">Visual Marketing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
+</nav>
 
-    <!-- WHY CHOOSE US -->
-    <h3>Why Choose Us?</h3>
-    <ol>
-        <li>Reliable and Trusted Service Delivery</li>
-        <li>Durable and Long-lasting Installations</li>
-        <li>Professional Clean Wiring Finishing</li>
-        <li>Fast Response and Quality Customer Care</li>
-        <li>Experienced Engineers & Technicians</li>
-    </ol>
+<header class="fade-up" id="about">
+    <img src="Adedaptronics logo.jpeg" alt="Logo" onerror="this.style.display='none'">
+    <h2>ADEDAPTRONICS</h2>
+    <p>... Powering Global Connection ...</p>
+</header>
 
-    <!-- VISUAL MARKETING -->
-    <h3>Visual Marketing</h3>
+<h1 class="fade-up">ADEDAPTRONICS</h1>
 
-    <table border="7" cellpadding="5" cellspacing="10">
-        <tr>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
+<p class="fade-up">
+    <u>Adedaptronics</u> is a forward-thinking energy and electrical solutions brand founded in the year <b>2025</b>. 
+    We specialize in clean energy systems, electrical wiring, power maintenance, and reliable installations.
+</p>
 
-        <tr>
-            <td><img src="Solar Panel Installation.jpeg" width="80" alt="Solar Install" 
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-            <td>Solar Panel Installation</td>
-            <td>₦150,000</td>
-        </tr>
+<h3 class="fade-up" id="services">Our Services</h3>
+<ul class="fade-up">
+    <li>Solar Panel Installation</li>
+    <li>Battery Bank Setup</li>
+    <li>Inverter Installation</li>
+    <li>Electrical Wiring (Home, Office & Industrial)</li>
+    <li>System Maintenance & Troubleshooting</li>
+    <li>Load Balancing & Cable Management</li>
+</ul>
 
-        <tr>
-            <td><img src="Battery Bank Setup.jpeg" width="80" alt="Battery Setup"
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-            <td>Battery Bank Setup</td>
-            <td>₦95,000</td>
-        </tr>
+<h3 class="fade-up" id="whychoose">Why Choose Us?</h3>
+<ol class="fade-up">
+    <li>Reliable and Trusted Service Delivery</li>
+    <li>Durable and Long-lasting Installations</li>
+    <li>Professional Clean Wiring Finishing</li>
+    <li>Fast Response and Quality Customer Care</li>
+    <li>Experienced Engineers & Technicians</li>
+</ol>
 
-        <tr>
-            <td><img src="Electrical Wiring.jpeg" width="80" alt="Electrical Wiring"
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-            <td>Electrical Wiring</td>
-            <td>₦50,000</td>
-        </tr>
+<h3 class="fade-up" id="marketing">Visual Marketing</h3>
+<table class="fade-up">
+    <tr><th>Image</th><th>Description</th><th>Price</th></tr>
+    <tr>
+        <td><img src="Solar Panel Installation.jpeg" width="80" alt="Solar Install" onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
+        <td>Solar Panel Installation</td>
+        <td>₦150,000</td>
+    </tr>
+    <tr>
+        <td><img src="Battery Bank Setup.jpeg" width="80" alt="Battery Setup" onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
+        <td>Battery Bank Setup</td>
+        <td>₦95,000</td>
+    </tr>
+    <td><img src="Electrical Wiring.jpeg" width="80" alt="Electrical Wiring"  
+                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
+            <td>Electrical Wiring</td>  
+            <td>₦50,000</td>  
+        </tr>  
+  
+        <tr>  
+            <td><img src="System Maintenance.jpeg" width="80" alt="Maintenance"  
+                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
+            <td>System Maintenance</td>  
+            <td>₦25,000</td>  
+        </tr>  
+  
+        <tr>  
+            <td><img src="Inverter Installation.jpeg" width="80" alt="Inverter Install"  
+                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
+            <td>Inverter Installation</td>  
+            <td>₦85,000</td>  
+        </tr>  
+</table>
 
-        <tr>
-            <td><img src="System Maintenance.jpeg" width="80" alt="Maintenance"
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-            <td>System Maintenance</td>
-            <td>₦25,000</td>
-        </tr>
+<p class="fade-up"><strong>For more enquiries:</strong></p>
+<div class="contact-links fade-up">
+    WhatsApp: <a href="https://wa.me/2348109337078?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Click here</a> <br>
+    Telegram: <a href="https://t.me/dapo010?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Click here</a>
+</div>
+<p class="fade-up">Or call: <b>09120315804</b></p>
+<p class="fade-up">Designed and Created by <b>Adedapo</b></p>
 
-        <tr>
-            <td><img src="Inverter Installation.jpeg" width="80" alt="Inverter Install"
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-            <td>Inverter Installation</td>
-            <td>₦85,000</td>
-        </tr>
-    </table>
+<footer class="fade-up">
+    © <span id="year"></span> <strong>Adedapo | Adedaptronics</strong>
+</footer>
 
-    <p>
-        <b>For more enquiries</b><br> 
-    WhatsApp ⤵️ <br>
-    <a href="https://wa.me/+2349129315804?text=Hey%20there%20👋.%20I%27m%20here%20to%20rate%20your%20work.%20Your%20rating%20will% be%20___/10.%20Keep%20it%20up%20👍👍👍">  Click here.</a><br>
-    Telegram ⤵️ <br>
-   <a href="https://t.me/dapo010?start=Hey%20there%20👋.%20I%27m%20here%20to%20rate%20your%20work.%20Your%20rating%20will%20be%20___/10.%20Keep%20it%20up%20👍👍👍">    Click here.</a><br></p>
-    Or call this number <b> ---> </b><u>09120315804.</u><br>
-    Designed and Created by <b>Adebesin Abdulwahab Adedapo</b>.
+<div class="sticky-contact">
+    <a href="https://wa.me/+2348109337078?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">WhatsApp</a>
+    <a href="https://t.me/dapo010?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Telegram</a>
+</div>
+
+<div id="scrollTopBtn">Top</div>
+
+<script>
+// Auto-update year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Scroll animations
+const faders = document.querySelectorAll('.fade-up');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 300){
+        scrollBtn.style.display = 'block';
+    } else { scrollBtn.style.display = 'none'; }
+});
+scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Navbar active link
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 80;
+    navLinks.forEach(link => {
+        let section = document.querySelector(link.getAttribute('href'));
+        if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
