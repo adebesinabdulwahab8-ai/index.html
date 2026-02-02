@@ -1,222 +1,1051 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adedaptronics | Powering Global Connection</title>
-<meta name="description" content="Adedaptronics - Energy & Electrical Solutions. Solar, Battery, Wiring, Inverters. Reliable, professional, forward-thinking.">
-<link rel="icon" href="Adedaptronics logo.jpeg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADEDAPTRONICS | Powering Global Connection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-yellow: #ffd600;
+            --electric-blue: #00d4ff;
+            --energy-green: #00ff88;
+            --dark-bg: #0a0e1a;
+            --darker-bg: #050810;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-light: #ffffff;
+            --text-dim: #a0aec0;
+            --accent-orange: #ff6b35;
+        }
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
-/* ===== Reset & Base ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f5f7fa; color:#333; scroll-behavior:smooth; }
-a { text-decoration:none; color:#007bff; font-weight:bold; }
-a:hover { text-decoration:underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ===== Navbar ===== */
-nav { position:sticky; top:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); z-index:1000; }
-nav ul { display:flex; justify-content:center; list-style:none; padding:10px 0; flex-wrap:wrap; }
-nav ul li { margin:0 15px; }
-nav ul li a { padding:8px 12px; border-radius:5px; transition:0.3s; }
-nav ul li a.active, nav ul li a:hover { background:#007bff; color:#fff; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* ===== Header ===== */
-header { text-align:center; padding:40px 20px; }
-header img { width:100px; border-radius:10px; margin-bottom:10px; }
-header h2 { font-size:2rem; color:#007bff; margin-bottom:5px; }
-header p { font-style:italic; color:#555; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-/* ===== Headings ===== */
-h1, h2, h3 { margin:20px 0 10px 0; text-align:center; }
-h1 { font-size:2rem; color:#222; }
-h3 { color:#007bff; margin-top:30px; position:relative; }
-h3::after { content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:-5px; width:50px; height:3px; background:linear-gradient(90deg,#007bff,#00bfff); border-radius:2px; }
+        /* Animated Lightning Background */
+        .lightning-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 214, 0, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            animation: electricPulse 10s ease-in-out infinite;
+        }
 
-/* ===== Paragraphs ===== */
-p { margin:10px auto 20px auto; max-width:800px; text-align:center; }
+        @keyframes electricPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
 
-/* ===== Lists ===== */
-ul, ol { margin:15px auto 25px auto; max-width:800px; text-align:left; }
-li { margin-bottom:10px; transition: transform 0.2s, box-shadow 0.2s; }
-li:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+        /* Electric Grid */
+        .electric-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 214, 0, 0.06) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, rgba(255, 214, 0, 0.06) 1.5px, transparent 1.5px);
+            background-size: 60px 60px;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-/* ===== Table Styling ===== */
-table { border-collapse:collapse; width:90%; margin:20px auto; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-table th, table td { border:1px solid #ddd; padding:12px 15px; text-align:center; }
-table th { background:#007bff; color:#fff; font-weight:bold; }
-table tr:nth-child(even) { background:#f9f9f9; }
-table tr:hover { background:#e6f0ff; }
-table img { border-radius:5px; transition: transform 0.3s, box-shadow 0.3s; }
-table img:hover { transform:scale(1.05); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+        /* Floating Energy Particles */
+        .energy-particle {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: var(--electric-yellow);
+            border-radius: 50%;
+            filter: blur(1px);
+            box-shadow: 0 0 15px var(--electric-yellow);
+            animation: particleFloat linear infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
 
-/* ===== Contact Buttons ===== */
-.contact-links a { display:inline-block; margin:5px; padding:10px 15px; background:#007bff; color:#fff; border-radius:5px; transition:0.3s; }
-.contact-links a:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.15); background:#0056b3; }
+        @keyframes particleFloat {
+            0% {
+                transform: translate(0, 100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), -100vh) scale(1);
+                opacity: 0;
+            }
+        }
 
-/* ===== Sticky Contact ===== */
-.sticky-contact { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:999; }
-.sticky-contact a { padding:10px 15px; border-radius:6px; color:#fff; background:#007bff; box-shadow:0 3px 10px rgba(0,0,0,0.15); transition:0.2s; }
-.sticky-contact a:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
 
-/* ===== Scroll-to-Top Button ===== */
-#scrollTopBtn { position:fixed; bottom:80px; right:20px; padding:10px 15px; background:#007bff; color:#fff; border-radius:6px; cursor:pointer; display:none; font-weight:bold; box-shadow:0 3px 10px rgba(0,0,0,0.15); }
+        /* Header */
+        header {
+            padding: 28px 0;
+            backdrop-filter: blur(15px);
+            background: rgba(10, 14, 26, 0.85);
+            border-bottom: 1px solid rgba(255, 214, 0, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* ===== Scroll Animations ===== */
-.fade-up { opacity:0; transform:translateY(30px); transition:opacity 0.8s ease, transform 0.8s ease; }
-.fade-up.visible { opacity:1; transform:translateY(0); }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* ===== Section Gradients ===== */
-section:nth-of-type(even) { background:linear-gradient(90deg,#f5f7fa,#e6f0ff); padding:20px; border-radius:10px; margin:20px 0; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
 
-/* ===== Footer ===== */
-footer { margin-top:50px; text-align:center; font-size:0.9rem; color:#555; }
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            border: 2px solid var(--electric-yellow);
+            box-shadow: 0 0 25px rgba(255, 214, 0, 0.35);
+            object-fit: cover;
+        }
 
-/* ===== Responsive ===== */
-@media (max-width:768px){ table{width:100%;} header img{width:80px;} h1,h2{font-size:1.5rem;} nav ul{flex-direction:column;} nav ul li{margin:10px 0;} }
-</style>
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--electric-yellow), var(--energy-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--electric-yellow);
+        }
+
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 14px 35px;
+            background: rgba(255, 214, 0, 0.12);
+            border: 2px solid var(--electric-yellow);
+            border-radius: 50px;
+            color: var(--electric-yellow);
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 35px;
+            animation: badgePulse 2.5s ease-in-out infinite;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(255, 214, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(255, 214, 0, 0.6);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, #ffffff, var(--electric-yellow), var(--energy-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tagline {
+            font-size: 2rem;
+            color: var(--text-dim);
+            margin-bottom: 60px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 20px 45px;
+            border-radius: 14px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--electric-yellow), var(--accent-orange));
+            color: var(--darker-bg);
+            box-shadow: 0 12px 45px rgba(255, 214, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 60px rgba(255, 214, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--electric-yellow);
+            color: var(--electric-yellow);
+        }
+
+        .btn-secondary:hover {
+            background: var(--electric-yellow);
+            color: var(--darker-bg);
+            transform: translateY(-6px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255, 214, 0, 0.12);
+            border: 1px solid var(--electric-yellow);
+            border-radius: 50px;
+            color: var(--electric-yellow);
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--electric-yellow);
+            font-weight: 800;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 214, 0, 0.25);
+            border-radius: 25px;
+            padding: 70px;
+            backdrop-filter: blur(15px);
+        }
+
+        .about-content p {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--text-dim);
+            margin-bottom: 25px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 35px;
+            margin-top: 70px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--electric-yellow), var(--energy-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.06;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--electric-yellow);
+            box-shadow: 0 25px 70px rgba(255, 214, 0, 0.25);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            color: var(--text-dim);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            font-size: 1.08rem;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--electric-yellow);
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Why Choose Us */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 70px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            padding: 35px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 214, 0, 0.06);
+            border-color: var(--electric-yellow);
+            transform: translateX(15px);
+        }
+
+        .benefit-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--electric-yellow);
+            font-family: 'JetBrains Mono', monospace;
+            flex-shrink: 0;
+        }
+
+        .benefit-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            font-weight: 800;
+        }
+
+        .benefit-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 70px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 214, 0, 0.25);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--electric-yellow), var(--energy-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .price-card:hover::before {
+            opacity: 0.08;
+        }
+
+        .price-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--electric-yellow);
+            box-shadow: 0 25px 70px rgba(255, 214, 0, 0.35);
+        }
+
+        .price-card-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+            font-weight: 800;
+        }
+
+        .price-card .price {
+            font-size: 2.8rem;
+            color: var(--electric-yellow);
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(255, 214, 0, 0.08), rgba(0, 255, 136, 0.06));
+            border: 1px solid rgba(255, 214, 0, 0.25);
+            border-radius: 35px;
+            padding: 90px 70px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+        }
+
+        .contact-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .contact-section p {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 20px 45px;
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .contact-btn:hover {
+            background: var(--electric-yellow);
+            color: var(--darker-bg);
+            border-color: var(--electric-yellow);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(255, 214, 0, 0.4);
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--electric-yellow);
+            margin-top: 40px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 120px;
+        }
+
+        footer p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        footer strong {
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 35px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-yellow);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .section-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu {
+                gap: 20px;
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            .about-content {
+                padding: 50px 35px;
+            }
+
+            .contact-section {
+                padding: 70px 40px;
+            }
+
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .phone-number {
+                font-size: 1.8rem;
+            }
+
+            .brand-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Animated Background -->
+    <div class="lightning-bg"></div>
+    <div class="electric-grid"></div>
 
-<nav>
-    <ul>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#whychoose" class="nav-link">Why Choose Us</a></li>
-        <li><a href="#marketing" class="nav-link">Visual Marketing</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-</nav>
-
-<header class="fade-up" id="about">
-    <img src="Adedaptronics logo.jpeg" alt="Logo" onerror="this.style.display='none'">
-    <h2>ADEDAPTRONICS</h2>
-    <p>... Powering Global Connection ...</p>
-</header>
-
-<h1 class="fade-up">ADEDAPTRONICS</h1>
-
-<p class="fade-up">
-    <u>Adedaptronics</u> is a forward-thinking energy and electrical solutions brand founded in the year <b>2025</b>. 
-    We specialize in clean energy systems, electrical wiring, power maintenance, and reliable installations.
-</p>
-
-<h3 class="fade-up" id="services">Our Services</h3>
-<ul class="fade-up">
-    <li>Solar Panel Installation</li>
-    <li>Battery Bank Setup</li>
-    <li>Inverter Installation</li>
-    <li>Electrical Wiring (Home, Office & Industrial)</li>
-    <li>System Maintenance & Troubleshooting</li>
-    <li>Load Balancing & Cable Management</li>
-</ul>
-
-<h3 class="fade-up" id="whychoose">Why Choose Us?</h3>
-<ol class="fade-up">
-    <li>Reliable and Trusted Service Delivery</li>
-    <li>Durable and Long-lasting Installations</li>
-    <li>Professional Clean Wiring Finishing</li>
-    <li>Fast Response and Quality Customer Care</li>
-    <li>Experienced Engineers & Technicians</li>
-</ol>
-
-<h3 class="fade-up" id="marketing">Visual Marketing</h3>
-<table class="fade-up">
-    <tr><th>Image</th><th>Description</th><th>Price</th></tr>
-    <tr>
-        <td><img src="Solar Panel Installation.jpeg" width="80" alt="Solar Install" onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-        <td>Solar Panel Installation</td>
-        <td>₦150,000</td>
-    </tr>
-    <tr>
-        <td><img src="Battery Bank Setup.jpeg" width="80" alt="Battery Setup" onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>
-        <td>Battery Bank Setup</td>
-        <td>₦95,000</td>
-    </tr>
-    <td><img src="Electrical Wiring.jpeg" width="80" alt="Electrical Wiring"  
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
-            <td>Electrical Wiring</td>  
-            <td>₦50,000</td>  
-        </tr>  
-  
-        <tr>  
-            <td><img src="System Maintenance.jpeg" width="80" alt="Maintenance"  
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
-            <td>System Maintenance</td>  
-            <td>₦25,000</td>  
-        </tr>  
-  
-        <tr>  
-            <td><img src="Inverter Installation.jpeg" width="80" alt="Inverter Install"  
-                onerror="this.src='https://via.placeholder.com/80x60?text=Img'"></td>  
-            <td>Inverter Installation</td>  
-            <td>₦85,000</td>  
-        </tr>  
-</table>
-
-<p class="fade-up"><strong>For more enquiries:</strong></p>
-<div class="contact-links fade-up">
-    WhatsApp: <a href="https://wa.me/2348109337078?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Click here</a> <br>
-    Telegram: <a href="https://t.me/dapo010?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Click here</a>
-</div>
-<p class="fade-up">Or call: <b>09120315804</b></p>
-<p class="fade-up">Designed and Created by <b>Adedapo</b></p>
-
-<footer class="fade-up">
-    © <span id="year"></span> <strong>Adedapo | Adedaptronics</strong>
-</footer>
-
-<div class="sticky-contact">
-    <a href="https://wa.me/+2348109337078?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">WhatsApp</a>
-    <a href="https://t.me/dapo010?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________">Telegram</a>
-</div>
-
-<div id="scrollTopBtn">Top</div>
-
-<script>
-// Auto-update year
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Scroll animations
-const faders = document.querySelectorAll('.fade-up');
-const appearOptions = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+    <!-- Energy Particles -->
+    <script>
+        // Create 25 floating energy particles
+        for (let i = 0; i < 25; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'energy-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (Math.random() * 15 + 12) + 's';
+            document.body.appendChild(particle);
         }
-    });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
 
-// Scroll-to-top button
-const scrollBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 300){
-        scrollBtn.style.display = 'block';
-    } else { scrollBtn.style.display = 'none'; }
-});
-scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="Adedaptronics logo.jpeg" alt="Adedaptronics Logo" class="logo-img">
+                    <div class="brand-name">ADEDAPTRONICS</div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#whychoose">Why Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-// Navbar active link
-const navLinks = document.querySelectorAll('.nav-link');
-window.addEventListener('scroll', () => {
-    let fromTop = window.scrollY + 80;
-    navLinks.forEach(link => {
-        let section = document.querySelector(link.getAttribute('href'));
-        if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-});
-</script>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">EST. 2025</div>
+                <h1>ADEDAPTRONICS</h1>
+                <p class="hero-tagline">⚡ Powering Global Connection ⚡</p>
+                <div class="cta-group">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get A Quote</a>
+                </div>
+            </div>
+        </section>
 
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <span class="section-label">WHO WE ARE</span>
+                <h2 class="section-title">Electrifying The Future</h2>
+                <p class="section-subtitle">
+                    Leading the charge in clean energy and electrical solutions across Nigeria
+                </p>
+            </div>
+            <div class="about-content">
+                <p>
+                    <span class="highlight">Adedaptronics</span> is a forward-thinking energy and electrical 
+                    solutions brand founded in <span class="highlight">2025</span>. We specialize in clean 
+                    energy systems, electrical wiring, power maintenance, and reliable installations.
+                </p>
+                <p>
+                    Our mission is to power global connections through innovative, sustainable, and 
+                    professional electrical solutions. From solar installations to complete electrical 
+                    system management, we bring expertise, reliability, and quality to every project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="section-header">
+                <span class="section-label">WHAT WE DO</span>
+                <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+                <p class="section-subtitle">
+                    Comprehensive electrical and energy solutions tailored to your needs
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">☀️</span>
+                    <h3>Solar Panel Installation</h3>
+                    <p>Complete solar energy systems designed for maximum efficiency and long-term sustainability.</p>
+                    <div class="price">₦150,000</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔋</span>
+                    <h3>Battery Bank Setup</h3>
+                    <p>Professional battery storage systems for reliable backup power and energy independence.</p>
+                    <div class="price">₦95,000</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">⚡</span>
+                    <h3>Inverter Installation</h3>
+                    <p>High-quality inverter systems for seamless power conversion and uninterrupted distribution.</p>
+                    <div class="price">₦85,000</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔌</span>
+                    <h3>Electrical Wiring</h3>
+                    <p>Professional wiring services for residential, commercial, and industrial facilities.</p>
+                    <div class="price">₦50,000</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔧</span>
+                    <h3>System Maintenance</h3>
+                    <p>Regular maintenance and troubleshooting to keep your systems running at peak performance.</p>
+                    <div class="price">₦25,000</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">⚙️</span>
+                    <h3>Load Balancing</h3>
+                    <p>Expert cable management and load balancing for optimal power distribution and safety.</p>
+                    <div class="price">Custom</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section" id="whychoose">
+            <div class="section-header">
+                <span class="section-label">WHY US</span>
+                <h2 class="section-title">What Sets Us <span class="highlight">Apart</span></h2>
+                <p class="section-subtitle">
+                    Committed to excellence, reliability, and professional service delivery
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-text">
+                        <h4>Reliable Service Delivery</h4>
+                        <p>Trusted by clients for consistent, timely, and professional service across all projects</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-text">
+                        <h4>Durable Installations</h4>
+                        <p>Long-lasting solutions built with quality materials to withstand the test of time</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-text">
+                        <h4>Professional Finishing</h4>
+                        <p>Clean, aesthetic wiring with meticulous attention to every installation detail</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-text">
+                        <h4>Fast Response Time</h4>
+                        <p>Quick turnaround with dedicated customer care and support throughout the process</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-text">
+                        <h4>Expert Team</h4>
+                        <p>Experienced engineers and certified technicians with proven industry expertise</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section" id="pricing">
+            <div class="section-header">
+                <span class="section-label">PRICING</span>
+                <h2 class="section-title">Transparent <span class="highlight">Pricing</span></h2>
+                <p class="section-subtitle">
+                    Quality services at competitive rates - no hidden fees
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-card-icon">☀️</div>
+                    <h3>Solar Installation</h3>
+                    <div class="price">₦150,000</div>
+                    <p>Complete solar panel system with professional installation and setup</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-card-icon">🔋</div>
+                    <h3>Battery Setup</h3>
+                    <div class="price">₦95,000</div>
+                    <p>Professional battery bank configuration and integration</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-card-icon">⚡</div>
+                    <h3>Inverter Install</h3>
+                    <div class="price">₦85,000</div>
+                    <p>High-quality inverter system installation and testing</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-card-icon">🔌</div>
+                    <h3>Electrical Wiring</h3>
+                    <div class="price">₦50,000</div>
+                    <p>Professional wiring for residential or commercial spaces</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-card-icon">🔧</div>
+                    <h3>Maintenance</h3>
+                    <div class="price">₦25,000</div>
+                    <p>Regular system checkups, fixes, and optimization</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="contact-section">
+                <h2>Ready to Get <span class="highlight">Started?</span></h2>
+                <p>Contact us today for a free consultation and personalized quote</p>
+                <div class="contact-grid">
+                    <a href="https://wa.me/2348109337078?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________" 
+                       target="_blank" class="contact-btn">
+                        💬 WhatsApp
+                    </a>
+                    <a href="https://t.me/dapo010?text=Hi%20there%20%F0%9F%91%8B.%0AI'm%20interested%20in%20your%20service%20and%20want%20to%20make%20enquiry%20on%20how%20it%20works.%0AMy%20Name%20is%20_____________" 
+                       target="_blank" class="contact-btn">
+                        ✈️ Telegram
+                    </a>
+                </div>
+                <span class="phone-number">📞 09120315804</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Designed and Created by <strong>Adedapo</strong></p>
+            <p>&copy; 2025 ADEDAPTRONICS | Powering Global Connection</p>
+            <div class="footer-links">
+                <a href="https://wa.me/+2348109337078" target="_blank">WhatsApp</a>
+                <a href="https://t.me/dapo010" target="_blank">Telegram</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.12,
+            rootMargin: '0px 0px -90px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations
+        document.querySelectorAll('.service-card, .benefit-item, .price-card, .about-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(35px)';
+            el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            observer.observe(el);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--electric-yellow)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
